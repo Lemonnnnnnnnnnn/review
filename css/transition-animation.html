@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    @keyframes myAnimation{
+        from{left: 0}
+        to {left: 10rem;}
+    }
+    
+    .target{
+        height: 5rem;
+        width: 5rem;
+        background: #000;
+        position: absolute;
+        /* animation: myAnimation 2s; */
+        transition: all 2s;
+    }
+    
+    .animation{
+        background: red !important;
+    }
+
+</style>
+<script>
+    function onClick(){
+        const target = document.getElementsByClassName('target')[0]
+        target.setAttribute('class' , 'target animation')
+    }
+
+</script>
+<body>
+    <div class='target' onclick="onClick()">
+
+    </div>
+    
+</body>
+</html>

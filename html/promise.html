@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    const abc = new Promise((resolve, reject) => {
+        function f() {
+            resolve(new Promise((resolve, rejected) => {
+                console.log(abc)
+                setTimeout(resolve('new Promise resolved'), 2000)
+            }))
+        }
+        setTimeout(f, 1000, 'abc resolved')
+    })
+
+    abc.then((res) => {
+        console.log(res)
+        console.log(abc)
+    }).catch(e => {
+        console.log(e)
+    })
+</script>

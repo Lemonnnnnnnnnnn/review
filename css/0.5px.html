@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .wrap {
+      display: flex;
+      height: 20rem;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .test {
+        /* scale方法 */
+      height: 0.5px;
+      width: 100%;
+      transform: scaleY(0.5);
+      background-color: red;
+
+      /* 渐变方法 */
+      /* background:linear-gradient(to bottom ,#fff , red) */
+    }
+    .normal {
+      height: 1px;
+      width: 100%;
+      background-color: red;
+      margin-top: 5rem;
+    }
+  </style>
+  <body>
+    <div class="wrap">
+      <div style="width: 100%;">
+        <div class="test"></div>
+        <div class="normal"></div>
+      </div>
+    </div>
+  </body>
+</html>

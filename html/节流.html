@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    var i = 0;
+    function realFunc() {
+      console.log(i++);
+    }
+
+    // mustRun参数代表是否到了时候必须执行的时候了（例如250ms请求一次）
+    function debounce(fuc, wait, mustRun) {
+      // 外层函数只执行一次，return的函数则是实际监听函数，调用时执行
+      var timeout,
+        startTime = new Date();
+      console.log("11");
+
+      return function() {
+        var context = this,
+          args = arguments;
+        //   curTime就是每次执行scroll方法的事件，注意scroll方法依旧始终在执行，只不过不会触发渲染而已
+        curTime = new Date();
+        console.log("222");
+
+        clearTimeout(timeout);
+        if (curTime - startTime >= mustRun) {
+          fuc.apply(context, args);
+          startTime = curTime;
+        } else {
+          timeout = setTimeout(fuc, wait);
+        }
+      };
+    }
+
+    window.addEventListener("scroll", debounce(realFunc, 500, 1000));
+  </script>
+  <body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </body>
+</html>

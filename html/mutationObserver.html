@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='target'></div>
+</body>
+
+</html>
+
+<script>
+    const ul = document.createElement('ul')
+    const target = document.getElementById('target')
+
+    const observer = new MutationObserver(() => console.log('11'))
+    var options = {
+        'childList': true,
+        'attributes': true
+    };
+    observer.observe(target, options)
+
+    for (let i = 0; i < 3; i++) {
+        const li = document.createElement('li')
+        li.innerText = i
+        ul.appendChild(li)
+    }
+    target.appendChild(ul)
+
+</script>

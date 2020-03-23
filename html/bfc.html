@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .left {
+        width: 5rem;
+        height: 10rem;
+        float: left;
+        background-color: red;
+        opacity: 0.6;
+    }
+    .left-wrap{
+        /* overflow: hidden; */
+        display: inline-block;
+        /* position: relative; */
+        /* display: table-cell; */
+        /* position: fixed; */
+    }
+
+    .right {
+        height: 10rem;
+        /* display: inline-block; */
+        /* float: left; */
+        background-color: blue;
+        opacity: 0.6;
+    }
+</style>
+
+<body>
+    <div class="left-wrap">
+        <div class="left"></div>
+    </div>
+    <div class="right">123</div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .target {
+        height: 10rem;
+        width: 10rem;
+        background: red;
+        border: 1rem solid blue;
+        position: absolute;
+    }
+
+    .destination {
+        height: 20rem;
+        width: 20rem;
+        border: 0.2rem solid #000;
+        float: right;
+    }
+</style>
+
+<body> 
+    <div id='lemon' class="target" ondragstart="dragStart(event)" draggable="true"></div>
+    <div class="destination" ondrop="drop(event)" ondragover="dragOver(event)"></div>
+</body>
+
+</html>
+<script>
+    // const div = document.getElementsByTagName('div')[0]
+    // let flag = false
+
+    // div.addEventListener('mousedown', (e) => {
+    //     flag = true
+    // })
+
+
+    // window.addEventListener('mousemove', (e) => {
+    //     if (flag) {
+    //         div.style.left = e.clientX - 16 * 5 + 'px'
+    //         div.style.top = e.clientY - 16 * 5 + 'px'
+    //     }
+    // })
+
+    // div.addEventListener('mouseup', (e) => {
+    //     flag = false
+    // })
+
+
+    function dragStart(e) {
+        e.dataTransfer.setData("Text", e.target.id);
+    }
+
+    function dragOver(e) {
+        e.preventDefault()
+    }
+
+    function drop(e) {
+        e.preventDefault()
+        const data = e.dataTransfer.getData('Text')
+        const targetEle = e.target
+        targetEle.appendChild(document.getElementById(data));
+    }
+
+
+</script>

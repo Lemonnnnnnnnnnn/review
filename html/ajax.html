@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
+<script defer>
+    // 1.创建异步对象
+    const ajax = new XMLHttpRequest()
+    // 2.设置请求的url参数，参数一是请求的类型，参数2是url地址 , 参数3是是否async
+    ajax.open('get', 'http://localhost:3001' , true)
+    // ajax.open('post', 'http://localhost:4000', true)
+    // ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    // const body = 'Im Lemon'
+    // 3.发送请求
+    ajax.send()
+    // 4.注册事件接收请求,onreadystatechange 意思是状态改变就会调用
+    ajax.onreadystatechange = () => {
+        // 如果ajax处于第四步并且返回的状态为200，获取数据
+        /**
+         * ajax.readyState：
+         * 0 ： 请求还未初始化
+         * 1 ： 已建立服务器连接
+         * 2 ： 请求已接受
+         * 3 ： 正在处理请求
+         * 4 ： 请求已完成并且响应已准备好
+         */
+        if (ajax.readyState == 4 && ajax.status === 200) {
+            var body = document.getElementsByTagName('body')[0]
+            const { responseText } = ajax
+            console.log(responseText)
+            // const reg = /<body>([\s\S]*)<\/body>/
+            // const content = responseText.match(reg)[1]
+            // body.innerHTML = content
+
+        }
+    }
+
+</script>

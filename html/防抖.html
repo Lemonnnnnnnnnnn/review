@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    var i = 0;
+    function realFunc() {
+      console.log(i++);
+    }
+
+    // immediate参数代表是否要立即执行
+    function debounce(fuc, wait, immediate) {
+      var timeout;
+
+      return function() {
+        var context = this,
+          args = arguments;
+
+        // 如果不用立即执行，将this和参数传递进目标函数，否则真实函数中的this会变成此处构造函数中的this
+        var later = function() {
+          timeout = null;
+          if (!immediate) fuc.apply(context, args);
+        };
+
+        // 如果immediate为true并且timeout不为空 ， 立即执行
+        var callNow = immediate && !timeout;
+
+        // 不论是否立即执行都先把上一个timeout清除掉
+        clearTimeout(timeout);
+        // 如果非立即执行
+        timeout = setTimeout(later, wait);
+
+        // 如果立即执行，同样传入this和参数
+        if (callNow) fuc.apply(context, args);
+      };
+    }
+
+    window.addEventListener("scroll", debounce(realFunc, 500));
+  </script>
+  <body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </body>
+</html>
